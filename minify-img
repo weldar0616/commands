@@ -1,0 +1,7 @@
+#! /bin/bash
+
+path="$1"
+name=${path%.*}
+extention=${path##*.}
+
+ffmpeg -i "$1" -vf scale="640:-1" "${name}_min.${extention}"
